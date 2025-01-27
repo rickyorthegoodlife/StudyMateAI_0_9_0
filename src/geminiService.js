@@ -29,7 +29,7 @@ const generateQuestionsFromText = async (topic, text, studyLevel, numberOfQuesti
         temperature: 1,
         topP: 0.95,
         topK: 40,
-        maxOutputTokens: 2000
+        maxOutputTokens: 8000
       }
     })
 
