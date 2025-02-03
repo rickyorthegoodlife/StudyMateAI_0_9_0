@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(apiKey)
 const validatePDF = (file) => {
   if (!file) throw new Error('Aucun fichier fourni')
   if (file.type !== 'application/pdf') throw new Error('Le fichier doit être au format PDF')
-  if (file.size > 10 * 1024 * 1024) throw new Error('La taille du fichier ne doit pas dépasser 10MB')
+  if (file.size > 15 * 1024 * 1024) throw new Error('La taille du fichier ne doit pas dépasser 10MB')
 }
 
 const toBase64 = (file) => new Promise((resolve, reject) => {
@@ -62,7 +62,7 @@ const generateQuestionsFromPDF = async (file, topic, studyLevel, numberOfQuestio
         temperature: 1,
         topP: 0.95,
         topK: 40,
-        maxOutputTokens: 2000
+        maxOutputTokens: 8000
       }
     })
 
